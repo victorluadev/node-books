@@ -1,6 +1,7 @@
 import express from 'express';
 
 const app = express();
+app.use(express.json());
 
 const books = [
   {id: 1, "title": "Senhor dos Aneis"},
@@ -13,6 +14,11 @@ app.get('/', (req, res) => {
 
 app.get('/books', (req, res) => {
   res.status(200).json(books);
+});
+
+app.post('/books', (req, res) => {
+  books.push(req.body);
+  res.status(201).send('Created');
 });
 
 export default app;

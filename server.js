@@ -1,7 +1,7 @@
 import app from './src/app.js';
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`server listen on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`server listen on http://localhost:${PORT}`);
 });
