@@ -23,11 +23,6 @@ app.get('/books/:id', (req, res) => {
   res.json(books[index]);
 });
 
-app.post('/books', (req, res) => {
-  books.push(req.body);
-  res.status(201).send('Created');
-});
-
 app.put('/books/:id', (req, res) => {
   let index = findBook(req.params.id);
   books[index].title = req.body.title; 
