@@ -3,13 +3,11 @@ import authorController from "../controllers/authorsController.js";
 
 const authorsRouter = express.Router();
 
-authorsRouter.get('/authors', authorController.getAuthors);
-authorsRouter.get('/authors/:id', authorController.getAuthorById);
-
-authorsRouter.post('/authors', authorController.createAuthor);
-
-authorsRouter.put('/authors/:id', authorController.updateAuthor);
-
-authorsRouter.delete('/authors/:id', authorController.deleteAuthor);
+authorsRouter
+  .get('/authors', authorController.getAuthors)
+  .get('/authors/:id', authorController.getAuthorById)
+  .post('/authors', authorController.createAuthor)
+  .put('/authors/:id', authorController.updateAuthor)
+  .delete('/authors/:id', authorController.deleteAuthor);
 
 export default authorsRouter;
