@@ -4,7 +4,11 @@ class bookController {
 
   static getBooks = (req, res) => {
     books.find((err, books) => {
-      res.status(200).json(books);
+      if(!err){
+        res.status(200).json(books);
+      } else {
+        res.status(400).send({message: err.message});
+      }
     });
   }
 
@@ -39,6 +43,18 @@ class bookController {
     books.findByIdAndUpdate(id, {$set: req.body}, (err) => {
       if(!err) {
         res.status(200).send({message: "Book has updated"});
+      } else {
+        res.status(500).send({message: err.message});
+      }
+    });
+  }
+
+  static deleteBook = (req, res) => {
+    const { id } = req.params;
+
+    books.findByIdAndDelete(id, (err) => {
+      if(!err) {
+        res.status(200).send({message: "Book has removed"});
       } else {
         res.status(500).send({message: err.message});
       }
