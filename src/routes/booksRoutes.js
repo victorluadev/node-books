@@ -9,6 +9,6 @@ booksRouter
   .get('/books/:id', bookController.getBookById)
   .post('/books', bookController.createBook)
   .put('/books/:id', bookController.updateBook)
-  .delete('/books/:id', bookController.deleteBook)
+  .delete('/books/:id', bookController.deleteBook);
 
 export default booksRouter;

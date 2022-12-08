@@ -1,5 +1,5 @@
 # Livraria API 📚
-Projeto realizado para aprender e aprimorar os conceitos do Node.js com Express e MongoDB com implementação de CRUD de livros
+Projeto realizado para aprender e aprimorar os conceitos do Node.js com Express e MongoDB com implementação de CRUD de livros, autores e editoras
 
 ## Tecnologias 🚀
 - [Node.js](https://nodejs.org/en/)

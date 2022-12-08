@@ -18,27 +18,26 @@ class bookController {
     const { id } = req.params;
 
     books.findById(id)
-    .populate("author", "name")
-    .exec((err, books) => {
-      if(err) {
-        res.status(400).send({message: `${err.message} - Book not found`});
-      } else {
-        res.status(200).send(books.toJSON());
-      }
-    });
+      .populate("author", "name")
+      .exec((err, books) => {
+        if(err) {
+          res.status(400).send({message: `${err.message} - Book not found`});
+        } else {
+          res.status(200).send(books.toJSON());
+        }
+      });
   }
 
   static createBook = (req, res) => {
     let book = new books(req.body);
 
     book.save((err) => {
-      
       if(err) {
         res.status(500).send({message: err.message});
       } else {
         res.status(201).send(book.toJSON());
       }
-    })
+    });
   }
 
   static updateBook = (req, res) => {
@@ -74,7 +73,7 @@ class bookController {
       } else {
         res.status(200).send(books);
       }
-    })
+    });
   }
 
 }

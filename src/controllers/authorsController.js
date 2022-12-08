@@ -33,7 +33,7 @@ class authorController {
       } else {
         res.status(201).send(author.toJSON());
       }
-    })
+    });
   }
 
   static updateAuthor = (req, res) => {
